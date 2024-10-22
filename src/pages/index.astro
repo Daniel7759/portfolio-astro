@@ -1,0 +1,152 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPills from "../components/SocialPills.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Github from "../components/icons/Github.astro";
+import Mail from "../components/icons/Mail.astro";
+import CardSkills from "../components/CardSkills.astro";
+import {
+  frontendImages,
+  backendImages,
+  aprendiendoImages,
+  herramientasImages,
+} from "../data/imagenes";
+import Image from "astro/components/Image.astro";
+---
+
+<Layout 
+  title="Portafolio Dani7759"
+  description="Desarrollador Backend con experiencia en Java y Spring Boot, buscando oportunidades para crecer profesionalmente."
+  >
+  <Header />
+
+  <main class="container mx-auto mt-24 px-4">
+    <SectionContainer id="inicio">
+      <div class="grid grid-cols-1 grid-rows-2 md:flex lg:flex">
+        <div class="row-start-2 md:w-2/3 md:pl-8 content-center">
+          <h2 class="text-3xl font-bold mb-4">Hola soy <strong class="dark:text-teal-400">Daniel!</strong></h2>
+          <p class="text-lg">
+            Desarrollador Backend con experiencia en Java y el ecosistema <strong class="dark:text-teal-400">Spring
+            (Spring Boot, Spring Data, Spring Security, Spring Cloud).</strong>
+            Conocimientos en frontend que me permiten colaborar en proyectos
+            full-stack. En búsqueda de oportunidades
+            para crecer profesionalmente.
+          </p>
+          <nav class="flex gap-x-3 mt-8 justify-start">
+            <SocialPills
+              href="https://www.linkedin.com/in/danieljulcamorohuanca"
+            >
+              <Linkedin class="size-6" />
+              LinkedIn
+            </SocialPills>
+            <SocialPills href="https://github.com/Daniel7759">
+              <Github class="size-6" />
+              Github
+            </SocialPills>
+            <SocialPills href="mailto:danieljh7759@gmail.com">
+              <Mail class="size-6" />
+              Correo
+            </SocialPills>
+          </nav>
+        </div>
+        <div class="row-start-1 flex justify-center md:w-1/3 mb-6 md:mb-0 content-center">
+          <Image
+            src="/img-dev.png"
+            alt="dev-img"
+            class=" "
+            width={260}
+            height={200}
+            format="webp"
+            quality={80}
+            loading="eager"
+          />
+        </div>
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-bold mb-4">Mis Proyectos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div
+          class="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:bg-white/20"
+        >
+          <h3 class="text-xl font-semibold mb-2">Proyecto 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut
+            quod ipsa voluptas aspernatur error modi omnis soluta iste ipsum
+            vitae, vel delectus officiis repellat doloribus officia consequatur
+            nobis sint?
+          </p>
+        </div>
+        <div
+          class="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:bg-white/20"
+        >
+          <h3 class="text-xl font-semibold mb-2">Proyecto 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia,
+            perspiciatis id nulla quo assumenda ratione, dolorum, voluptatibus
+            exercitationem blanditiis quam facilis adipisci aliquam! Cumque
+            aspernatur obcaecati illo atque dolore.
+          </p>
+        </div>
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="habilidades">
+      <h2 class="text-3xl font-bold mb-4">Tecnologías</h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-2 gap-y-6"
+      >
+        <CardSkills title="Frontend" images={frontendImages} />
+        <CardSkills title="Backend" images={backendImages} />
+        <CardSkills title="Aprendiendo" images={aprendiendoImages} />
+        <CardSkills title="Herramientas" images={herramientasImages} />
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+      <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+        <div class="[&amp;>p]:mb-4 [&amp;>p>strong]:text-yellow-500 dark:[&amp;>p>strong]:text-yellow-100 [&amp;>p>strong]:font-normal [&amp;>p>strong]:font-mono text-pretty order-2 md:order-1 lg:order-1">
+          <p class="text-lg py-2">
+            Soy egresado de la carrera de Desarrollo de Sistemas de Información en
+            IDAT, con una sólida formación en programación y desarrollo de
+            aplicaciones web. Mi experiencia está principalmente enfocada en el
+            desarrollo backend, donde he trabajado con Java y el ecosistema Spring
+            (Spring Boot, Spring Data JPA, Spring Security), construyendo APIs
+            robustas y escalables, aplicando buenas prácticas de ingeniería de
+            software y resolviendo problemas complejos del lado del servidor.
+          </p>
+          <p class="text-lg py-2">
+            Aunque mi enfoque principal es el desarrollo backend, también tengo
+            conocimientos en tecnologías frontend, lo que me permite contribuir en
+            proyectos full-stack cuando es necesario. Siempre estoy en constante
+            aprendizaje, buscando nuevas herramientas y formas de mejorar mis
+            habilidades.
+          </p>
+          <p class="text-lg py-2">
+            Actualmente, estoy buscando oportunidades en el desarrollo de software
+            donde pueda crecer profesionalmente, colaborar en proyectos interesantes
+            y seguir expandiendo mis conocimientos.
+          </p>
+        </div>
+        <Image
+            src="/photo.png"
+            alt="Daniel Julcamoro"
+            class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 "
+            width={200}
+            height={200}
+            format="webp"
+            quality={80}
+            loading="lazy"
+            style="object-position: 50% 50%"
+          />
+      </article>
+    </SectionContainer>
+  </main>
+
+  <Footer />
+</Layout>

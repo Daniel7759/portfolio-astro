@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon';
+---
+<header class="bg-white/20 dark:bg-black/20 backdrop-blur-sm text-sm font-semibold text-black dark:text-white py-4 fixed w-full top-0 z-10 transition-colors duration-300">
+  <div class="container mx-auto px-4 flex justify-center items-center relative">
+    <nav>
+      <ul class="flex space-x-2 md:space-x-8 lg:space-x-9">
+        <li><a href="#proyectos" class="hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300">Proyectos</a></li>
+        <li><a href="#habilidades" class="hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300">Habilidades</a></li>
+        <li><a href="#sobre-mi" class="hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300">Sobre Mí</a></li>
+        <li><a href="https://www.linkedin.com/in/danieljulcamorohuanca/" class="hover:text-teal-600 dark:hover:text-teal-300 transition-colors duration-300">Contacto</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 absolute right-4">
+      <Icon name="tabler:sun" class="w-6 h-6 text-gray-800 dark:text-white hidden dark:block" />
+      <Icon name="tabler:moon" class="w-6 h-6 text-gray-800 dark:text-white block dark:hidden" />
+    </button>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    if (html.classList.contains('dark')) {
+      localStorage.theme = 'dark';
+    } else {
+      localStorage.theme = 'light';
+    }
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>

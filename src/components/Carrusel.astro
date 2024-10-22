@@ -1,0 +1,36 @@
+---
+const logos = [
+  { name: 'Java', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'Spring', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+  { name: 'Docker', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'Git', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'Node.js', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+];
+---
+
+<div class="relative w-full overflow-hidden py-10">
+  <div class="flex animate-carousel">
+    {logos.concat(logos).map((logo, index) => (
+      <div class="flex-none w-1/5 px-4">
+        <img src={logo.url} alt={logo.name} class="w-full h-20 object-contain" />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes carousel {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-carousel {
+    animation: carousel 30s linear infinite;
+  }
+</style>
