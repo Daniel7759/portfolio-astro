@@ -7,9 +7,9 @@ export default {
       fontFamily:{
         lexend: ['Lexend', 'sans-serif'],
       },
-      backgroundImage: {
+      /* backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      }
+      } */
     },
   },
   plugins: [],
