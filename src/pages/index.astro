@@ -14,26 +14,33 @@ import {
   aprendiendoImages,
   herramientasImages,
 } from "../data/imagenes";
+import { projects } from "../data/projects";
 import Image from "astro/components/Image.astro";
+import CardProjects from "../components/CardProjects.astro";
+import imagenDev from "../../public/img-dev.png";
 ---
 
-<Layout 
+<Layout
   title="Portafolio Dani7759"
   description="Desarrollador Backend con experiencia en Java y Spring Boot, buscando oportunidades para crecer profesionalmente."
-  >
+>
   <Header />
 
-  <main class="container mx-auto mt-20 px-4">
+  <main class="container mx-auto md:mt-20 px-4">
     <SectionContainer id="inicio">
-      <div class="grid grid-cols-1 grid-rows-2 md:flex lg:flex">
-        <div class="row-start-2 md:w-2/3 md:pl-8 content-center">
-          <h2 class="text-3xl font-bold mb-4">Hola soy <strong class="dark:text-teal-400">Daniel!</strong></h2>
+      <div class="flex flex-col md:flex-row lg:flex-row">
+        <div class="order-2 md:order-1 md:w-2/3 content-center">
+          <h2 class="text-3xl font-bold mb-4">
+            Hola soy <strong class="dark:text-teal-400">Daniel!</strong>
+          </h2>
           <p class="text-lg">
-            Desarrollador Backend con experiencia en Java y el ecosistema <strong class="dark:text-teal-400">Spring
-            (Spring Boot, Spring Data, Spring Security, Spring Cloud).</strong>
-            Conocimientos en frontend que me permiten colaborar en proyectos
-            full-stack. En búsqueda de oportunidades
-            para crecer profesionalmente.
+            Desarrollador Backend con experiencia en Java, el framework <strong
+              class="dark:text-teal-400"
+              >Spring (Spring Boot, Spring Data, Spring Security, Spring Cloud).</strong
+            >
+            y manejo de bases de datos relacionales. Adicionalmente tengo experiencia
+            en tecnologias frontend que me permiten colaborar en proyectos full-stack.
+            Estoy en búsqueda de oportunidades laborales para desarrollarme profesionalmente.
           </p>
           <nav class="md:flex lg:flex gap-x-3 mt-8 justify-start">
             <SocialPills
@@ -52,53 +59,148 @@ import Image from "astro/components/Image.astro";
             </SocialPills>
           </nav>
         </div>
-        <div class="row-start-1 flex justify-center md:w-1/3 mb-6 md:mb-0 content-center">
+        <div
+          class="order-1 flex justify-center md:order-2 md:w-1/3 md:mb-0 content-center"
+        >
           <Image
-            src="/img-dev.png"
+            src={imagenDev}
             alt="dev-img"
-            class=" "
-            width={260}
-            height={200}
+            class="object-cover w-full h-auto md:w-auto md:h-64"
             format="webp"
-            quality={80}
+            quality={100}
             loading="eager"
           />
         </div>
       </div>
     </SectionContainer>
 
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+      >
+        <svg
+          class="size-8"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+          ></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"
+          ></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"
+          ></path></svg
+        >
+        Experiencia laboral
+      </h2>
+      <ol class="relative mt-16">
+        <li class="">
+          <div
+            class="relative mx-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+          >
+            <div class="relative pb-12 md:col-span-2">
+              <div class="sticky top-0">
+                <span
+                  class="text-gray-700 dark:text-white -left-[42px] absolute rounded-full text-5xl"
+                  >•</span
+                >
+                <h3 class="text-xl font-bold text-black dark:text-white">
+                  Desarrollador Web
+                </h3>
+                <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
+                  Agencia Consigue Ventas
+                </h4>
+                <time
+                  class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+                  >Actualmente...</time
+                >
+              </div>
+            </div>
+            <div
+              class="relative flex flex-col gap-2 pb-4 text-lg text-gray-600 dark:text-gray-300 md:col-span-3"
+            >
+              Como Desarrollador Web, soy responsable de llevar a cabo los
+              proyectos asignados, colaborando estrechamente con el equipo de
+              UX/UI para transformar diseños en experiencias web funcionales,
+              modernas y alineadas con las necesidades del cliente. Utilizando
+              herramientas y tecnologías como WordPress, Elementor, HTML, CSS,
+              JavaScript, y otras, asegurando un correcto funcionamiento segun
+              los requerimientos del cliente.
+            </div>
+          </div>
+        </li>
+      </ol>
+    </SectionContainer>
+
     <SectionContainer id="proyectos">
-      <h2 class="text-3xl font-bold mb-4">Mis Proyectos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div
-          class="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:bg-white/20"
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+      >
+        <svg
+          class="size-7"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+            d="M14 4l-4 16"></path></svg
         >
-          <h3 class="text-xl font-semibold mb-2">Proyecto 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut
-            quod ipsa voluptas aspernatur error modi omnis soluta iste ipsum
-            vitae, vel delectus officiis repellat doloribus officia consequatur
-            nobis sint?
-          </p>
-        </div>
-        <div
-          class="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:bg-white/20"
-        >
-          <h3 class="text-xl font-semibold mb-2">Proyecto 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quia,
-            perspiciatis id nulla quo assumenda ratione, dolorum, voluptatibus
-            exercitationem blanditiis quam facilis adipisci aliquam! Cumque
-            aspernatur obcaecati illo atque dolore.
-          </p>
-        </div>
+        Proyectos
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+        {
+          projects.map((project) => (
+            <CardProjects
+              title={project.title}
+              image={project.image}
+              alt={project.alt}
+              description={project.description}
+              preview={project.preview}
+              code={project.code}
+              tecnologias={project.tecnologias}
+            />
+          ))
+        }
       </div>
     </SectionContainer>
 
-    <SectionContainer id="habilidades">
-      <h2 class="text-3xl font-bold mb-4">Tecnologías</h2>
+    <SectionContainer id="tecnologias">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+      >
+        <svg
+          class="size-8"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="scale: 1;"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"
+          ></path>
+          <path d="M7 20h10"></path>
+          <path d="M9 16v4"></path>
+          <path d="M15 16v4"></path>
+        </svg>
+        Tecnologías
+      </h2>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-2 gap-y-6"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-4 gap-y-6"
       >
         <CardSkills title="Frontend" images={frontendImages} />
         <CardSkills title="Backend" images={backendImages} />
@@ -108,42 +210,61 @@ import Image from "astro/components/Image.astro";
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
-      <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
-      <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-        <div class="[&amp;>p]:mb-4 [&amp;>p>strong]:text-yellow-500 dark:[&amp;>p>strong]:text-yellow-100 [&amp;>p>strong]:font-normal [&amp;>p>strong]:font-mono text-pretty order-2 md:order-1 lg:order-1">
-          <p class="text-lg py-2">
-            Soy egresado de la carrera de Desarrollo de Sistemas de Información en
-            IDAT, con una sólida formación en programación y desarrollo de
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+      >
+        <svg
+          class="size-8"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path
+            d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"
+          ></path></svg
+        >
+        Sobre mí
+      </h2>
+      <article
+        class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+      >
+        <div
+          class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1 lg:order-1"
+        >
+          <p class="text-lg py-2 text-pretty">
+            Soy egresado de la carrera de Desarrollo de Sistemas de Información
+            en IDAT, con una sólida formación en programación y desarrollo de
             aplicaciones web. Mi experiencia está principalmente enfocada en el
-            desarrollo backend, donde he trabajado con Java y el ecosistema Spring
-            (Spring Boot, Spring Data JPA, Spring Security), construyendo APIs
-            robustas y escalables, aplicando buenas prácticas de ingeniería de
-            software y resolviendo problemas complejos del lado del servidor.
+            desarrollo backend, donde he trabajado con Java y el framework
+            Spring (Spring Boot, Spring Data JPA, Spring Security), construyendo
+            APIs robustas y escalables, aplicando buenas prácticas de software y
+            resolviendo problemas del lado del servidor. Soy una persona
+            entusiaste a la cual le gusta aprender nuevas tecnologías, brindar
+            soluciones a problemas que puedan surgir en el desarrollo de
+            software y apoyar al equipo en lo que se requiera.
           </p>
-          <p class="text-lg py-2">
-            Aunque mi enfoque principal es el desarrollo backend, también tengo
-            conocimientos en tecnologías frontend, lo que me permite contribuir en
-            proyectos full-stack cuando es necesario. Siempre estoy en constante
-            aprendizaje, buscando nuevas herramientas y formas de mejorar mis
-            habilidades.
-          </p>
-          <p class="text-lg py-2">
-            Actualmente, estoy buscando oportunidades en el desarrollo de software
-            donde pueda crecer profesionalmente, colaborar en proyectos interesantes
-            y seguir expandiendo mis conocimientos.
+          <p class="text-lg py-2 text-pretty">
+            Actualmente, estoy buscando oportunidades en el desarrollo de
+            software donde pueda crecer profesionalmente, colaborar en proyectos
+            interesantes y seguir expandiendo mis conocimientos.
           </p>
         </div>
         <Image
-            src="/photo.png"
-            alt="Daniel Julcamoro"
-            class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 "
-            width={200}
-            height={200}
-            format="webp"
-            quality={80}
-            loading="lazy"
-            style="object-position: 50% 50%"
-          />
+          src="/photo.png"
+          alt="Daniel Julcamoro"
+          class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+          width={200}
+          height={200}
+          format="webp"
+          quality={80}
+          loading="lazy"
+          style="object-position: 50% 50%"
+        />
       </article>
     </SectionContainer>
   </main>

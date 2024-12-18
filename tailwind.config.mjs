@@ -4,6 +4,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '390px', // Agregar un punto de interrupción personalizado para 400px
+      },
       fontFamily:{
         lexend: ['Lexend', 'sans-serif'],
       },

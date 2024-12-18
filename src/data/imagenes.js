@@ -5,7 +5,7 @@ export const frontendImages = [
     alt: "Angular",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     alt: "JavaScript",
   },
   {
@@ -71,7 +71,7 @@ export const aprendiendoImages = [
     alt: "Astro",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     alt: "TypeScript",
   },
   {
@@ -82,6 +82,10 @@ export const aprendiendoImages = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     alt: "MongoDB",
   },
+  {
+    src: "https://cdn-icons-png.flaticon.com/512/59/59137.png",
+    alt: "WordPress",
+  }
 ];
 
 export const herramientasImages = [

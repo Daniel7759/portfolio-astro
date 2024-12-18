@@ -5,11 +5,11 @@ import Image from "astro/components/Image.astro";
 const { title, images } = Astro.props;
 ---
 
-<div class="max-w-sm mx-auto bg-white/10 border border-gray-200/20 rounded-lg shadow dark:bg-gray-700/40 dark:hover:bg-gray-700/50 backdrop-blur-sm dark:border-gray-700 p-4 hover:scale-105 transition">
+<div class="w-sm lg:w-full mx-auto bg-white/5 border border-white/20 rounded-lg shadow-lg dark:bg-white/5 backdrop-blur-sm dark:border-[#120f28]/30 p-4">
   <h3 class="text-center text-xl dark:text-teal-400 font-bold mb-4">{title}</h3>
   <div class="grid grid-cols-3 gap-4">
     {images.map((image) => (
-      <div class="grid-cols-1 items-center p-4">
+      <div class="flex flex-col justify-center items-center p-4 md:hover:scale-110 transition duration-300">
         <Image 
         src={image.src} 
         alt={image.alt} 
