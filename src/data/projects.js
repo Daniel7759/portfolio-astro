@@ -36,7 +36,7 @@ export const projects = [
         alt: "Swagger",
       },
       {
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jwt/jwt-original.svg",
+        src: "https://static.cdnlogo.com/logos/j/20/jwt.svg",
         alt: "JWT",
       }
     ]
