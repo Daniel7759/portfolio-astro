@@ -1,8 +1,46 @@
 import aycImg from "../../public/ayc-cleaning.png";
 import urlShortenerImg from "../../public/url-shortener.png";
 import ecommerceImg from "../../public/ecommerce.png";
-
+import bookSocialNetwork from "../../public/book-social-network.png";
 export const projects = [
+  {
+    title: "Book-Social-Network",
+    image: bookSocialNetwork,
+    alt: "book-social-network",
+    description: "Una plataforma social desarrollada con Spring Boot que permite a los usuarios compartir, prestar y gestionar libros dentro de una comunidad en red. Características Principales: Gestión de Usuarios: Registro con activación por email y autenticación JWT, Gestión de Libros: CRUD completo con subida de portadas, Sistema de Préstamos: Workflow de préstamo y devolución de libros, Sistema Social: Feedback, calificaciones y descubrimiento de libros",
+    code: "https://github.com/Daniel7759/book-social-network",
+    preview: "https://book-social-ui.vercel.app/",
+    tecnologias: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+        alt: "Java",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+        alt: "Spring",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+        alt: "PostgreSQL",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+        alt: "Angular",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+        alt: "Docker",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
+        alt: "Swagger",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jwt/jwt-original.svg",
+        alt: "JWT",
+      }
+    ]
+  },
   {
     title: "Url Shortener",
     image: urlShortenerImg,
