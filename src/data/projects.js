@@ -1,7 +1,7 @@
 import aycImg from "../../public/ayc-cleaning.png";
 import urlShortenerImg from "../../public/url-shortener.png";
 import ecommerceImg from "../../public/ecommerce.png";
-import bookSocialNetwork from "../../public/book-social-network.png";
+import bookSocialNetwork from "../../public/book-socila-network.png";
 export const projects = [
   {
     title: "Book-Social-Network",
