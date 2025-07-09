@@ -5,8 +5,8 @@ import Image from "astro/components/Image.astro";
 const { title, images } = Astro.props;
 ---
 
-<div class="w-sm lg:w-full mx-auto bg-white/5 border border-white/20 rounded-lg shadow-lg dark:bg-white/5 backdrop-blur-sm dark:border-[#120f28]/30 p-4">
-  <h3 class="text-center text-xl dark:text-teal-400 font-bold mb-4">{title}</h3>
+<div class="w-sm lg:w-full mx-auto bg-white/5 border border-white/20 rounded-lg shadow-lg dark:bg-black/10 backdrop-blur-sm dark:border-[#120f28]/30 p-4">
+  <h3 class="text-center text-xl dark:text-white/90 font-bold mb-4">{title}</h3>
   <div class="grid grid-cols-3 gap-4">
     {images.map((image) => (
       <div class="flex flex-col justify-center items-center p-4 md:hover:scale-110 transition duration-300">
